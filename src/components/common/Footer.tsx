@@ -346,7 +346,7 @@ export default function Footer() {
                   </div>
 
                   <div>
-                    +91 9810900042
+                    +91 6391915673
                   </div>
 
                 </div>

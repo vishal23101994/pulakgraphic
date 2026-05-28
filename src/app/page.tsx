@@ -282,7 +282,7 @@ export default function Home() {
 
       {/* ABOUT */}
 
-      <section className="relative py-36 px-6 overflow-hidden">
+      <section className="relative py-36 px-6 overflow-hidden font-serif ">
 
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-100 blur-[220px] rounded-full opacity-60" />
 
@@ -364,8 +364,8 @@ export default function Home() {
 
               <h2
                 className="
-                  text-5xl
-                  md:text-7xl
+                  text-3xl
+                  md:text-5xl
 
                   font-black
 
@@ -459,13 +459,13 @@ export default function Home() {
 
       {/* PROCESS */}
 
-      <section className="py-30 px-6 bg-[#f8fbff]">
+      <section className="py-30 px-6 bg-[#f8fbff] font-serif">
 
       <div className="max-w-7xl mx-auto">
 
       <div className="text-center mb-28">
 
-      <h2 className="text-6xl font-black mb-8">
+      <h2 className="text-5xl font-black mb-8">
       Our Creative Workflow
       </h2>
 
@@ -544,7 +544,7 @@ export default function Home() {
 
       {/* STATS */}
 
-      <section className="py-36 px-6">
+      <section className="py-36 px-6 font-serif">
 
       <div className="max-w-7xl mx-auto">
 
@@ -566,17 +566,17 @@ export default function Home() {
 
       <div className="text-center mb-20">
 
-      <h2 className="text-6xl font-black mb-8">
+      <h2 className="text-5xl font-black mb-8">
       Our Achievements
       </h2>
 
-      <p className="text-white/70">
+      <p className="text-white/70 text-xl">
       Numbers that represent trust and quality.
       </p>
 
       </div>
 
-      <div className="grid md:grid-cols-4 gap-10">
+      <div className="grid md:grid-cols-4 gap-10 text-lg">
 
       {[
       ["500+","Projects Completed"],
@@ -590,7 +590,7 @@ export default function Home() {
       className="text-center"
       >
 
-      <h3 className="text-7xl font-black mb-5">
+      <h3 className="text-4xl font-black mb-5">
       {n}
       </h3>
 
@@ -612,7 +612,7 @@ export default function Home() {
 
       {/* CTA */}
 
-      <section className="pb-36 px-6">
+      <section className="pb-36 px-6 font-serif">
 
       <div className="max-w-6xl mx-auto">
 
@@ -635,7 +635,7 @@ export default function Home() {
 
       <h2
       className="
-      text-6xl
+      text-4xl
 
       font-black
 
@@ -711,7 +711,7 @@ export default function Home() {
 
       {/* FEATURES */}
 
-      <section className="pb-24 px-6">
+      <section className="pb-24 px-6 font-serif">
 
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 xl:grid-cols-4 gap-8">
 

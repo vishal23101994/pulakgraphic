@@ -6,6 +6,9 @@ import SocialSidebar from "../components/common/SocialSidebar";
 export const metadata = {
   title: "Pulak Graphics",
   description: "Print, Media & Live Coverage Company",
+  icons: {
+    icon:"/logo1.png",
+  },
 };
 
 export default function RootLayout({

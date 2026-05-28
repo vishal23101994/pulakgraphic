@@ -313,7 +313,7 @@ export default function About() {
 
       {/* WHO WE ARE */}
 
-      <section className="py-36 px-6 bg-white overflow-hidden">
+      <section className="py-36 px-6 bg-white font-serif overflow-hidden">
 
         <div className="max-w-7xl mx-auto">
 
@@ -338,8 +338,8 @@ export default function About() {
 
             <h2
               className="
-                text-5xl
-                md:text-7xl
+                text-3xl
+                md:text-5xl
                 font-black
                 mb-8
                 leading-tight
@@ -514,7 +514,7 @@ export default function About() {
 
           text-white
 
-          text-3xl
+          text-2xl
           font-black
 
           flex
@@ -535,7 +535,7 @@ export default function About() {
 
           <h3
           className="
-          text-[34px]
+          text-[28px]
 
           font-black
 
@@ -556,7 +556,7 @@ export default function About() {
           className="
           text-gray-600
 
-          text-[17px]
+          text-[13px]
 
           leading-[2]
 
@@ -616,8 +616,8 @@ export default function About() {
 
             <h3
               className="
-                text-4xl
-                md:text-5xl
+                text-2xl
+                md:text-3xl
 
                 font-black
 
@@ -656,7 +656,7 @@ export default function About() {
 
       {/* WHAT WE DO */}
 
-      <section className="py-36 px-6 bg-slate-50 overflow-hidden">
+      <section className="py-36 px-6 bg-slate-50 font-serif overflow-hidden">
 
         <div className="max-w-7xl mx-auto">
 
@@ -685,8 +685,8 @@ export default function About() {
 
             <h2
               className="
-                text-5xl
-                md:text-6xl
+                text-3xl
+                md:text-4xl
 
                 font-black
 
@@ -774,7 +774,7 @@ export default function About() {
 
                 <div
                   className={`
-                    text-6xl
+                    text-4xl
                     mb-8
 
                     ${item.color}
@@ -789,7 +789,7 @@ export default function About() {
 
                 <h3
                   className="
-                    text-3xl
+                    text-2xl
 
                     font-black
 
@@ -821,93 +821,93 @@ export default function About() {
 
       {/* MISSION + VISION */}
 
-      <section className="py-32 px-6 bg-slate-50">
+      <section className="py-20 px-2 bg-slate-50 font-serif">
 
-      <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">
 
-      <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-10">
 
-      <div
-      className="
-      rounded-[40px]
+        <div
+        className="
+        rounded-[40px]
 
-      bg-white
+        bg-white
 
-      p-14
+        p-14
 
-      shadow-xl
-      "
-      >
+        shadow-xl
+        "
+        >
 
-      <h2 className="text-5xl font-black mb-8">
-      Our Mission
-      </h2>
+        <h2 className="text-3xl font-black mb-4">
+        Our Mission
+        </h2>
 
-      <p className="text-lg text-gray-600 leading-9">
+        <p className="text-lg text-gray-600 leading-9">
 
-      Our mission is to provide
-      premium creative, print and
-      media solutions that empower
-      brands and organizations.
+        Our mission is to provide
+        premium creative, print and
+        media solutions that empower
+        brands and organizations.
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      We focus on quality,
-      innovation and customer
-      satisfaction throughout
-      every stage of execution.
+        We focus on quality,
+        innovation and customer
+        satisfaction throughout
+        every stage of execution.
 
-      </p>
+        </p>
 
-      </div>
+        </div>
 
 
-      <div
-      className="
-      rounded-[40px]
+        <div
+        className="
+        rounded-[40px]
 
-      bg-gradient-to-r
-      from-blue-600
-      to-cyan-600
+        bg-gradient-to-r
+        from-blue-600
+        to-cyan-600
 
-      text-white
+        text-white
 
-      p-14
-      "
-      >
+        p-14
+        "
+        >
 
-      <h2 className="text-5xl font-black mb-8">
-      Our Vision
-      </h2>
+        <h2 className="text-3xl font-black mb-8">
+        Our Vision
+        </h2>
 
-      <p className="text-lg leading-9 text-white/90">
+        <p className="text-lg leading-9 text-white/90">
 
-      Our vision is to become a
-      recognized creative partner
-      known for premium experiences,
-      modern production and trust.
+        Our vision is to become a
+        recognized creative partner
+        known for premium experiences,
+        modern production and trust.
 
-      <br />
-      <br />
+        <br />
+        <br />
 
-      We aim to inspire businesses
-      through innovation and
-      exceptional visual storytelling.
+        We aim to inspire businesses
+        through innovation and
+        exceptional visual storytelling.
 
-      </p>
+        </p>
 
-      </div>
+        </div>
 
-      </div>
+        </div>
 
-      </div>
+        </div>
 
       </section>
 
       {/* STATS */}
 
-      <section className="pb-28 px-6">
+      <section className="pb-28 px-6 font-serif">
 
         <div className="max-w-7xl mx-auto">
 
@@ -935,7 +935,7 @@ export default function About() {
                   className="text-center"
                 >
 
-                  <h2 className="text-6xl font-black mb-4">
+                  <h2 className="text-3xl font-black mb-4">
                     {item.number}
                   </h2>
 

@@ -95,7 +95,7 @@ export default function Services() {
       <section className="relative min-h-screen -mt-[110px] overflow-hidden">
         {/* BG */}
         <Image
-          src="/images/services hero.png"
+          src="/images/service_hero.png"
           alt="Pulak Graphics Services"
           fill
           priority
@@ -338,13 +338,13 @@ export default function Services() {
 
       {/* SERVICES */}
 
-      <section className="py-28 px-6">
+      <section className="py-28 px-6 font-serif">
 
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-20">
 
-            <h2 className="text-5xl font-black mb-6">
+            <h2 className="text-4xl font-black mb-6">
               What We Offer
             </h2>
 
@@ -381,11 +381,11 @@ export default function Services() {
 
                 <div className="p-8">
 
-                  <div className="text-6xl text-blue-600 mb-8">
+                  <div className="text-4xl text-blue-600 mb-8">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-5">
+                  <h3 className="text-2xl font-bold mb-5">
                     {service.title}
                   </h3>
 
@@ -419,13 +419,13 @@ export default function Services() {
 
       {/* FEATURES */}
 
-      <section className="pb-28 px-6">
+      <section className="pb-28 px-6 font-serif">
 
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-20">
 
-            <h2 className="text-5xl font-black">
+            <h2 className="text-4xl font-black">
               Why Choose Us
             </h2>
 
@@ -451,7 +451,7 @@ export default function Services() {
                 "
               >
 
-                <div className="text-5xl text-blue-600 mb-6">
+                <div className="text-4xl text-blue-600 mb-6">
                   {feature.icon}
                 </div>
 
