@@ -295,9 +295,9 @@ export default function Footer() {
                 leading-tight
               "
             >
-              Delhi Office & 
+              Working Office & <br/>
 
-              <span className="ml-2 text-blue-500">
+              <span className="text-blue-500">
                 Media Partner
               </span>
 
@@ -346,7 +346,7 @@ export default function Footer() {
                   </div>
 
                   <div>
-                    +91 6391915673
+                    +91 9810900042
                   </div>
 
                 </div>
@@ -358,7 +358,7 @@ export default function Footer() {
                 <FaEnvelope className="text-blue-500" />
 
                 <p className="text-slate-400 text-sm break-all">
-                  jinsharnam@gmail.com
+                  ankitprince1979@gmail.com
                 </p>
 
               </div>

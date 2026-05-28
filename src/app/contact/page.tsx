@@ -13,6 +13,12 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+import {
+  TramFront,
+  Train,
+  Bus,
+} from "lucide-react";
+
 const contactInfo = [
   {
     icon: <FaPhoneAlt />,
@@ -64,7 +70,7 @@ export default function Contact() {
     <>
       {/* HERO */}
 
-      <section className="relative bg-[#07111f] -mt-[110px] pt-[180px] pb-24 px-6 overflow-hidden font-serif">
+      <section className="relative bg-[#07111f] -mt-[5px] pt-[180px] pb-24 px-6 overflow-hidden font-serif">
 
         {/* LIGHTS */}
 
@@ -336,7 +342,8 @@ export default function Contact() {
 
         </div>
 
-      </section>
+      </section>  
+
       {/* MAP SECTION */}
 
       <section className="py-24 px-6 bg-white font-serif">
@@ -472,7 +479,7 @@ export default function Contact() {
                 </p>
 
                 <p className="text-white">
-                  Mon - Sat : 9:00 AM - 8:00 PM
+                  Mon - Sat : 10:00 AM - 7:00 PM
                 </p>
 
               </div>
@@ -511,6 +518,322 @@ export default function Contact() {
         </div>
 
       </section>
+
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-24 px-6 bg-white font-serif"
+      >
+
+        <div
+          className="
+            max-w-7xl
+            mx-auto
+
+            rounded-[40px]
+
+            overflow-hidden
+
+            bg-gradient-to-br
+            from-[#071120]
+            via-[#0b1629]
+            to-[#10203a]
+
+            border
+            border-blue-500/10
+
+            shadow-[0_30px_120px_rgba(0,0,0,.25)]
+
+            p-8
+            md:p-14
+          "
+        >
+
+          {/* HEADING */}
+
+          <div className="text-center mb-16">
+
+            <div
+              className="
+                inline-flex
+
+                px-5
+                py-2
+
+                rounded-full
+
+                bg-blue-500/10
+
+                border
+                border-blue-400/20
+
+                text-blue-300
+
+                text-sm
+
+                mb-6
+              "
+            >
+              Office Connectivity
+            </div>
+
+            <h2
+              className="
+                text-3xl
+                md:text-4xl
+
+                font-black
+
+                text-white
+
+                mb-6
+              "
+            >
+              How To Reach
+              <span className="text-cyan-400 ml-3">
+                Our Office
+              </span>
+            </h2>
+
+            <p
+              className="
+                text-white/70
+
+                max-w-3xl
+                mx-auto
+
+                leading-8
+              "
+            >
+              Our office is conveniently connected through
+              metro stations, railway connectivity and
+              nearby public transport facilities for easy access.
+            </p>
+
+          </div>
+
+          {/* CARDS */}
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {/* METRO */}
+
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="
+                rounded-[32px]
+
+                bg-white/[0.04]
+
+                border
+                border-white/10
+
+                p-8
+
+                backdrop-blur-sm
+
+                transition-all
+                duration-300
+              "
+            >
+
+              <div
+                className="
+                  w-14
+                  h-14
+
+                  rounded-2xl
+
+                  bg-gradient-to-r
+                  from-cyan-500
+                  to-blue-600
+
+                  flex
+                  items-center
+                  justify-center
+
+                  text-white
+
+                  mb-8
+                "
+              >
+                <TramFront size={28} />
+              </div>
+
+              <h3 className="text-2xl font-black text-white mb-6">
+                Metro Stations
+              </h3>
+
+              <div className="space-y-6 text-white/75">
+
+                <div>
+                  <p className="font-semibold text-white">
+                    Shahdara Metro Station
+                  </p>
+
+                  <p className="text-sm leading-7">
+                    Red Line • ~1.2 km
+                    <br />
+                    Auto & E-rickshaw available
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-white">
+                    Welcome Metro Station
+                  </p>
+
+                  <p className="text-sm leading-7">
+                    Red / Pink Line Interchange
+                    <br />
+                    ~2.3 km distance
+                  </p>
+                </div>
+
+                <div>
+                  <p className="font-semibold text-white">
+                    East Azad Nagar
+                  </p>
+
+                  <p className="text-sm leading-7">
+                    Pink Line • ~2 km
+                    <br />
+                    Easy connectivity from East Delhi
+                  </p>
+                </div>
+
+              </div>
+
+            </motion.div>
+
+            {/* RAILWAY */}
+
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="
+                rounded-[32px]
+
+                bg-white/[0.04]
+
+                border
+                border-white/10
+
+                p-8
+
+                backdrop-blur-sm
+
+                transition-all
+                duration-300
+              "
+            >
+
+              <div
+                className="
+                  w-14
+                  h-14
+
+                  rounded-2xl
+
+                  bg-gradient-to-r
+                  from-blue-600
+                  to-cyan-500
+
+                  flex
+                  items-center
+                  justify-center
+
+                  text-white
+
+                  mb-8
+                "
+              >
+                <Train size={28} />
+              </div>
+
+              <h3 className="text-2xl font-black text-white mb-6">
+                Railway Station
+              </h3>
+
+              <p className="text-white font-semibold mb-3">
+                Shahdara Junction (SDA)
+              </p>
+
+              <p className="text-white/70 leading-8">
+                Approximately 1.5 km away from
+                our office location with easy
+                availability of auto-rickshaw
+                and cab services.
+              </p>
+
+            </motion.div>
+
+            {/* BUS */}
+
+            <motion.div
+              whileHover={{ y: -8 }}
+              className="
+                rounded-[32px]
+
+                bg-white/[0.04]
+
+                border
+                border-white/10
+
+                p-8
+
+                backdrop-blur-sm
+
+                transition-all
+                duration-300
+              "
+            >
+
+              <div
+                className="
+                  w-14
+                  h-14
+
+                  rounded-2xl
+
+                  bg-gradient-to-r
+                  from-cyan-500
+                  to-blue-600
+
+                  flex
+                  items-center
+                  justify-center
+
+                  text-white
+
+                  mb-8
+                "
+              >
+                <Bus size={28} />
+              </div>
+
+              <h3 className="text-2xl font-black text-white mb-6">
+                Nearby Bus Stop
+              </h3>
+
+              <p className="text-white font-semibold mb-3">
+                Bihari Colony Bus Stop
+              </p>
+
+              <p className="text-white/70 leading-8">
+                Walking distance from office
+                location with frequent local
+                bus connectivity throughout Delhi.
+              </p>
+
+            </motion.div>
+
+          </div>
+
+        </div>
+
+      </motion.section>
 
       {/* HIGHLIGHTS */}
 

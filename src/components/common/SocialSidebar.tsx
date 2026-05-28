@@ -72,7 +72,7 @@ export default function FloatingSocialBar() {
       {/* 🌼 Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-400 to-amber-500 text-[#3A0A00] shadow-lg rounded-r-full w-8 h-12 flex items-center justify-center transition-all duration-300 ${
+        className={`absolute top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-400 to-cyan-300 text-[#3A0A00] shadow-lg rounded-r-full w-8 h-12 flex items-center justify-center transition-all duration-300 ${
           isOpen ? "left-[100%]" : "left-[60px]"
         } hover:shadow-amber-300/40 hover:scale-105`}
       >

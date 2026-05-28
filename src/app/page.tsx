@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* HERO */}
 
-      <section className="relative min-h-screen -mt-[110px] overflow-hidden">
+      <section className="relative min-h-screen -mt-[5px] overflow-hidden">
 
         {/* BG */}
 
