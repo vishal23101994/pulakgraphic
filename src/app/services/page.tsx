@@ -6,59 +6,88 @@ import { motion } from "framer-motion";
 
 import {
   FaBookOpen,
-  FaCamera,
-  FaPrint,
-  FaVideo,
-  FaStar,
+  FaCalendarAlt,
+  FaIdCard,
+  FaEnvelopeOpenText,
+  FaBible,
+  FaNewspaper,
+  FaFileAlt,
+  FaFolderOpen,
+} from "react-icons/fa";
+import {
   FaPalette,
+  FaImage,
+  FaAddressCard,
+  FaPhotoVideo,
+  FaBullhorn,
+  FaPaintBrush,
+  FaPenNib,
+  FaDesktop,
+} from "react-icons/fa";
+import {
+  FaPrint,
+  FaLightbulb,
+  FaSquareFull,
+  FaStar,
+  FaLeaf,
+  FaLayerGroup,
+  FaBuilding,
+  FaChalkboard,
+} from "react-icons/fa";
+import {
+  FaFile,
+  FaClone,
+  FaGem,
+  FaFileSignature,
+  FaFileInvoice,
+  FaFly,
+  FaBriefcase,
   FaTruck,
   FaHeadset,
-  FaIdCard,
-  FaImage,
 } from "react-icons/fa";
 
-const services = [
-  {
-    icon: <FaBookOpen />,
-    title: "Book Printing",
-    color: "from-blue-600 to-indigo-500",
-    text: "Premium quality spiral binding, hard binding and custom book printing.",
-  },
+const publicationServices = [
+  { title: "Books", icon: <FaBookOpen /> },
+  { title: "Calendars", icon: <FaCalendarAlt /> },
+  { title: "Visiting Cards", icon: <FaIdCard /> },
+  { title: "Invitation Cards", icon: <FaEnvelopeOpenText /> },
+  { title: "Religious Literature", icon: <FaBible /> },
+  { title: "Magazines", icon: <FaNewspaper /> },
+  { title: "Brochures", icon: <FaFileAlt /> },
+  { title: "Catalogues", icon: <FaFolderOpen /> },
+];
 
-  {
-    icon: <FaIdCard />,
-    title: "Visiting Cards",
-    color: "from-purple-600 to-pink-500",
-    text: "Premium business cards with stylish layouts and modern branding.",
-  },
+const designingServices = [
+  { title: "Poster Design", icon: <FaPalette /> },
+  { title: "Banner Design", icon: <FaImage /> },
+  { title: "Visiting Card Design", icon: <FaAddressCard /> },
+  { title: "Photo Design", icon: <FaPhotoVideo /> },
+  { title: "Social Media Creatives", icon: <FaBullhorn /> },
+  { title: "Advertisement Design", icon: <FaPaintBrush /> },
+  { title: "Flex Design", icon: <FaPenNib /> },
+  { title: "Event Graphics", icon: <FaDesktop /> },
+];
 
-  {
-    icon: <FaImage />,
-    title: "Poster Printing",
-    color: "from-pink-600 to-rose-500",
-    text: "High-quality posters for advertisements and promotions.",
-  },
+const flexServices = [
+  { title: "Frontlit Flex", icon: <FaLightbulb /> },
+  { title: "Backlit Flex", icon: <FaLightbulb /> },
+  { title: "Blackback Flex", icon: <FaSquareFull /> },
+  { title: "Star Flex", icon: <FaStar /> },
+  { title: "Eco-Solvent Flex", icon: <FaLeaf /> },
+  { title: "Vinyl Printing", icon: <FaPrint /> },
+  { title: "Outdoor Hoardings", icon: <FaBuilding /> },
+  { title: "Event Backdrops", icon: <FaChalkboard /> },
+];
 
-  {
-    icon: <FaPrint />,
-    title: "Banner Printing",
-    color: "from-orange-500 to-red-500",
-    text: "Large-format banner printing for events and branding.",
-  },
-
-  {
-    icon: <FaCamera />,
-    title: "Photography",
-    color: "from-green-500 to-emerald-500",
-    text: "Professional photography for products, weddings and events.",
-  },
-
-  {
-    icon: <FaVideo />,
-    title: "Videography",
-    color: "from-red-500 to-pink-500",
-    text: "Creative video production for branding and live events.",
-  },
+const paperServices = [
+  { title: "Uncoated Paper", icon: <FaFile /> },
+  { title: "Coated Paper", icon: <FaClone /> },
+  { title: "Cardstock", icon: <FaLayerGroup /> },
+  { title: "Specialty Paper", icon: <FaGem /> },
+  { title: "Letterheads", icon: <FaFileSignature /> },
+  { title: "Pamphlets", icon: <FaFileInvoice /> },
+  { title: "Flyers", icon: <FaFly /> },
+  { title: "Business Stationery", icon: <FaBriefcase /> },
 ];
 
 const features = [
@@ -336,76 +365,241 @@ export default function Services() {
 
       </section>
 
-      {/* SERVICES */}
+      {/* PUBLICATION SERVICES */}
 
-      <section className="py-28 px-6 font-serif">
+      <section className="py-28 px-6 bg-white font-serif">
 
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-20">
 
             <h2 className="text-4xl font-black mb-6">
-              What We Offer
+              Publication Services
             </h2>
 
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Premium printing, publication, media and event
-              coverage services powered by creativity and technology.
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+              Pulak Graphics provides complete publication
+              solutions including books, calendars, visiting cards,
+              magazines, invitation cards and promotional materials.
+              We ensure premium design, professional layouts and
+              high-quality printing for every publication project.
             </p>
 
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
 
-            {services.map((service) => (
+            {publicationServices.map((item) => (
 
               <motion.div
-                key={service.title}
-                whileHover={{
-                  y: -12,
-                }}
+                key={item.title}
+                whileHover={{ y: -10 }}
                 className="
-                  rounded-[34px]
-                  bg-white/60
-                  backdrop-blur-xl
-                  border
-                  border-white
+                  bg-white
+                  rounded-[32px]
+                  p-8
                   shadow-xl
-                  overflow-hidden
+                  border
+                  border-slate-100
                 "
               >
 
-                <div
-                  className={`h-2 bg-gradient-to-r ${service.color}`}
-                />
-
-                <div className="p-8">
-
-                  <div className="text-4xl text-blue-600 mb-8">
-                    {service.icon}
-                  </div>
-
-                  <h3 className="text-2xl font-bold mb-5">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-8">
-                    {service.text}
-                  </p>
-
-                  <button
-                    className="
-                      px-6
-                      py-3
-                      rounded-full
-                      bg-slate-900
-                      text-white
-                    "
-                  >
-                    Learn More
-                  </button>
-
+                <div className="text-4xl text-blue-600 mb-6">
+                    {item.icon}
                 </div>
+
+                <h3 className="text-2xl font-black mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 leading-8">
+                  Premium publication solutions with
+                  professional layouts and quality printing.
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* DESIGNING SERVICES */}
+
+      <section className="py-28 px-6 bg-slate-50 font-serif">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <h2 className="text-4xl font-black mb-6">
+              Designing Services
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+              Our creative designing team develops impactful visual
+              content for businesses, religious organizations and
+              events. Every design is created with creativity,
+              branding consistency and professional presentation.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            {designingServices.map((item) => (
+
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -10 }}
+                className="
+                  bg-white
+                  rounded-[32px]
+                  p-8
+                  shadow-xl
+                  border
+                  border-slate-100
+                "
+              >
+
+                <div className="text-4xl text-purple-600 mb-6">
+                  {item.icon}
+                </div>
+
+                <h3 className="text-2xl font-black mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 leading-8">
+                  Creative and professional designs
+                  tailored for branding, promotion
+                  and visual communication.
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* FLEX PRINTING SERVICES */}
+
+      <section className="py-28 px-6 bg-white font-serif">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <h2 className="text-4xl font-black mb-6">
+              Flex Printing Services
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+              We provide premium flex printing solutions for
+              advertising, exhibitions, religious programs,
+              events and outdoor branding with vibrant colors
+              and durable print quality.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            {flexServices.map((item) => (
+
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -10 }}
+                className="
+                  bg-white
+                  rounded-[32px]
+                  p-8
+                  shadow-xl
+                  border
+                  border-slate-100
+                "
+              >
+
+                <div className="text-4xl text-green-600 mb-6">
+                  {item.icon}
+                </div>
+
+                <h3 className="text-2xl font-black mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 leading-8">
+                  Durable, vibrant and professional
+                  flex printing solutions for every need.
+                </p>
+
+              </motion.div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* PAPER PRINTING SERVICES */}
+
+      <section className="py-28 px-6 bg-slate-50 font-serif">
+
+        <div className="max-w-7xl mx-auto">
+
+          <div className="text-center mb-20">
+
+            <h2 className="text-4xl font-black mb-6">
+              Paper Printing Services
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-9">
+              From business stationery to marketing materials,
+              we provide premium paper printing services using
+              high-quality paper stocks and modern printing
+              technology.
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+            {paperServices.map((item) => (
+
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -10 }}
+                className="
+                  bg-white
+                  rounded-[32px]
+                  p-8
+                  shadow-xl
+                  border
+                  border-slate-100
+                "
+              >
+
+                <div className="text-4xl text-orange-600 mb-6">
+                  {item.icon}
+                </div>
+
+                <h3 className="text-2xl font-black mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-gray-600 leading-8">
+                  High-quality paper printing with
+                  sharp colors and premium finishing.
+                </p>
 
               </motion.div>
 
@@ -419,7 +613,7 @@ export default function Services() {
 
       {/* FEATURES */}
 
-      <section className="pb-28 px-6 font-serif">
+      <section className="py-32 pb-32 px-6 font-serif">
 
         <div className="max-w-7xl mx-auto">
 

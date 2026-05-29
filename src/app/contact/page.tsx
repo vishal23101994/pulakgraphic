@@ -23,7 +23,7 @@ const contactInfo = [
   {
     icon: <FaPhoneAlt />,
     title: "Call Us",
-    value: "+91 9810900699 | 6391915673",
+    value: "+91 9810900699 | 9810900042",
     desc: "Available for support & inquiries",
     color: "from-blue-500 to-cyan-500",
   },
@@ -31,7 +31,7 @@ const contactInfo = [
   {
     icon: <FaEnvelope />,
     title: "Email Address",
-    value: "jinsharnam@gmail.com",
+    value: "ankitprince1979@gmail.com",
     desc: "Send your project requirements",
     color: "from-purple-500 to-pink-500",
   },
@@ -45,25 +45,6 @@ const contactInfo = [
   },
 ];
 
-const highlights = [
-  {
-    icon: <FaClock />,
-    title: "Fast Response",
-    text: "Quick communication for every project inquiry.",
-  },
-
-  {
-    icon: <FaHeadset />,
-    title: "24/7 Support",
-    text: "Dedicated assistance whenever needed.",
-  },
-
-  {
-    icon: <FaGlobe />,
-    title: "Creative Solutions",
-    text: "Modern printing, media & publication services.",
-  },
-];
 
 export default function Contact() {
   return (
@@ -834,77 +815,6 @@ export default function Contact() {
         </div>
 
       </motion.section>
-
-      {/* HIGHLIGHTS */}
-
-      <section className="py-20 px-6 bg-white font-serif">
-
-        <div className="max-w-7xl mx-auto">
-
-          <div className="grid md:grid-cols-3 gap-8">
-
-            {highlights.map((item) => (
-
-              <motion.div
-                key={item.title}
-                whileHover={{
-                  y: -10,
-                }}
-                className="
-                  rounded-[28px]
-
-                  bg-slate-50
-
-                  p-7
-
-                  shadow-lg
-
-                  text-center
-                "
-              >
-
-                <div
-                  className="
-                    w-14
-                    h-14
-
-                    rounded-full
-
-                    bg-gradient-to-r
-                    from-blue-600
-                    to-cyan-500
-
-                    text-white
-                    text-xl
-
-                    flex
-                    items-center
-                    justify-center
-
-                    mx-auto
-                    mb-8
-                  "
-                >
-                  {item.icon}
-                </div>
-
-                <h3 className="text-xl font-black mb-5">
-                  {item.title}
-                </h3>
-
-                <p className="text-gray-600 leading-8">
-                  {item.text}
-                </p>
-
-              </motion.div>
-
-            ))}
-
-          </div>
-
-        </div>
-
-      </section>
     </>
   );
 }

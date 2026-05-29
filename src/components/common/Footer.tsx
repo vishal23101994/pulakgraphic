@@ -181,8 +181,10 @@ export default function Footer() {
               ))}
 
             </div>
+            
 
           </div>
+          
 
           {/* SERVICES */}
 
@@ -295,41 +297,109 @@ export default function Footer() {
                 leading-tight
               "
             >
-              Working Office & <br/>
-
               <span className="text-blue-500">
                 Media Partner
               </span>
 
             </h3>
 
-            <div className="space-y-8">
+            <div className="space-y-5">
+              <div className="flex items-center gap-4">
+
+                {/* LOGO */}
+                <div className="relative w-14 h-14 shrink-0">
+
+                  <Image
+                    src="/logo_new.png"
+                    alt="Jinsharnam Media"
+                    fill
+                    className="object-contain"
+                  />
+
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-xl">
+                    Jinsharnam Media
+                  </h4>
+
+                  <a
+                    href="https://jinsharnammedia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      inline-block
+                      mt-1
+
+                      text-cyan-400
+                      text-sm
+
+                      hover:text-white
+
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    🌐 www.jinsharnammedia.com
+                  </a>
+
+                </div>
+
+              </div>
+              {/* REGISTERED OFFICE */}
 
               <div className="flex items-start gap-5">
 
-                <div className="mt-1">
-                  <FaMapMarkerAlt className="text-blue-500 text-xl" />
+                <FaMapMarkerAlt
+                  className="
+                    text-cyan-500
+                    mt-2
+                    shrink-0
+                  "
+                />
+
+                <div className="text-slate-400 text-sm">
+
+                  <div className="text-white font-semibold mb-1">
+                    Registered Office
+                  </div>
+
+                  <div>
+                    4/2771, Street Number 3,
+                    <br />
+                    Bihari Colony,
+                    <br />
+                    Shahdara, Delhi – 110032
+                  </div>
+
                 </div>
 
-                <div>
+              </div>
+              <div className="flex items-start gap-5">
 
-                  <p className="text-white font-semibold">
-                    Jinsharnam Media
-                  </p>
+                <FaMapMarkerAlt
+                  className="
+                    text-blue-500
+                    mt-2
+                    shrink-0
+                  "
+                />
 
-                  <p className="text-slate-400 text-sm leading-8">
+                <div className="text-slate-400 text-sm">
+                  <div className="text-white font-semibold mb-1">
+                    Working Office
+                  </div>
 
+                  <div>
                     Vatsalya Bhawan
+                  </div>
 
-                    <br />
-
-                    P-75, Street No. 5, 
-
-                    Bihari Colony Extension, Shahdara, 
-
-                    Delhi – 110032
-
-                  </p>
+                  <div>
+                    P-75, Street No. 5,
+                    
+                    Bihari Colony Extension,
+                    
+                    Shahdara, Delhi – 110032
+                  </div>
 
                 </div>
 
@@ -361,6 +431,104 @@ export default function Footer() {
                   ankitprince1979@gmail.com
                 </p>
 
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        {/* GST & ACCOUNT DETAILS */}
+        <div
+          className="
+            mt-12
+
+            rounded-[24px]
+
+            border
+            border-slate-800
+
+            bg-white/[0.03]
+
+            backdrop-blur-sm
+
+            p-8
+          "
+        >
+
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+
+            <h3
+              className="
+                text-lg
+                font-bold
+                text-white
+                shrink-0
+              "
+            >
+              GST & Banking Details
+            </h3>
+
+            <div
+              className="
+                flex-1
+
+                grid
+                md:grid-cols-2
+                lg:grid-cols-5
+
+                gap-6
+              "
+            >
+
+              <div>
+                <p className="text-slate-500 text-xs uppercase">
+                  GSTIN
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  07ACKPJ2504N1ZI
+                </p>
+              </div>
+
+              <div>
+                <p className="text-slate-500 text-xs uppercase">
+                  Account Name
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  M/S Pulak Graphics
+                </p>
+              </div>
+
+              <div>
+                <p className="text-slate-500 text-xs uppercase">
+                  Account Number
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  62506013924
+                </p>
+              </div>
+
+              <div>
+                <p className="text-slate-500 text-xs uppercase">
+                  IFSC Code
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  SBIN0001281
+                </p>
+              </div>
+
+              <div>
+                <p className="text-slate-500 text-xs uppercase">
+                  Bank Name
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  State Bank of India
+                </p>
               </div>
 
             </div>

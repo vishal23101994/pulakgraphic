@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import {
   FaPrint,
@@ -12,33 +13,37 @@ import {
 
 const services = [
   {
-    icon: <FaPrint />,
-    title: "Printing",
-    color: "text-blue-600",
-    desc: "Premium printing solutions for businesses and brands.",
-  },
-
-  {
     icon: <FaBookOpen />,
     title: "Publication",
     color: "text-purple-600",
-    desc: "Creative publishing and modern content design services.",
+    detail:
+      "Books, magazines, diaries, calendars, invitation cards, religious publications and all types of publication services with professional layouts and premium quality.",
   },
 
   {
     icon: <FaCamera />,
-    title: "Media",
-    color: "text-green-600",
-    desc: "Photography, videography and promotional media content.",
+    title: "Designing",
+    color: "text-blue-600",
+    detail:
+      "Poster design, social media creatives, banners, flex designs, advertisement creatives, event graphics, branding materials and custom visual content.",
   },
 
   {
-    icon: <FaBroadcastTower />,
-    title: "Live Coverage",
-    color: "text-orange-600",
-    desc: "Professional live streaming and event coverage services.",
+    icon: <FaPrint />,
+    title: "Flex Printing",
+    color: "text-green-600",
+    detail:
+      "High-quality flex printing for events, promotions, shops, exhibitions, religious programs, hoardings, backdrops and outdoor branding requirements.",
   },
-];
+
+  {
+    icon: <FaPrint />,
+    title: "Paper Printing",
+    color: "text-orange-600",
+    detail:
+      "Visiting cards, brochures, pamphlets, letterheads, wedding cards, invitation cards, posters, catalogues and all types of paper printing solutions.",
+  },
+]
 
 const stats = [
   {
@@ -1254,6 +1259,25 @@ export default function About() {
                 >
                   {item.detail}
                 </p>
+                <Link
+                  href="/services"
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+
+                    mt-8
+
+                    text-blue-600
+                    font-semibold
+
+                    hover:gap-3
+
+                    transition-all
+                  "
+                >
+                  Read More →
+                </Link>
 
               </motion.div>
 
