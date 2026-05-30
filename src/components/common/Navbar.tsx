@@ -238,45 +238,7 @@ export default function Navbar() {
 
             {/* RIGHT */}
 
-            <div className="flex items-center gap-3">
-
-              {/* DESKTOP CTA */}
-
-              <Link
-                href="/contact"
-                className="
-                  hidden
-                  lg:inline-flex
-
-                  items-center
-                  gap-2
-
-                  px-6
-                  py-3
-
-                  rounded-full
-
-                  bg-gradient-to-r
-                  from-blue-600
-                  to-cyan-500
-
-                  text-white
-
-                  text-sm
-                  font-semibold
-
-                  shadow-[0_10px_40px_rgba(59,130,246,.35)]
-
-                  hover:scale-105
-
-                  transition-all
-                  duration-300
-                "
-              >
-                Get Quote
-
-                <ChevronRight size={18} />
-              </Link>
+            <div>
 
               {/* MOBILE BUTTON */}
 
@@ -522,40 +484,6 @@ export default function Navbar() {
               ))}
 
             </div>
-
-            {/* CTA */}
-
-            <Link
-              href="/contact"
-              className="
-                mt-6
-
-                flex
-                items-center
-                justify-center
-                gap-2
-
-                w-full
-
-                h-[56px]
-
-                rounded-2xl
-
-                bg-gradient-to-r
-                from-blue-600
-                to-cyan-500
-
-                text-white
-
-                font-semibold
-
-                shadow-lg
-              "
-            >
-              Get Quote
-
-              <ChevronRight size={18} />
-            </Link>
 
           </div>
 

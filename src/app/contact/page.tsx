@@ -39,7 +39,7 @@ const contactInfo = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Office Address",
-    value: "P-75, Street No-5, Bihari Colony Extension, Shahdara, Delhi-110032, India",
+    value: "Vatsalya Bhawan, P-75, Street No-5, Bihari Colony Extension, Shahdara, Delhi-110032, India",
     desc: "Creative studio & production hub",
     color: "from-orange-500 to-red-500",
   },

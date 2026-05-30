@@ -30,18 +30,17 @@ const services = [
 
   {
     icon: <FaPrint />,
-    title: "Flex Printing",
-    color: "text-green-600",
-    detail:
-      "High-quality flex printing for events, promotions, shops, exhibitions, religious programs, hoardings, backdrops and outdoor branding requirements.",
-  },
-
-  {
-    icon: <FaPrint />,
     title: "Paper Printing",
     color: "text-orange-600",
     detail:
       "Visiting cards, brochures, pamphlets, letterheads, wedding cards, invitation cards, posters, catalogues and all types of paper printing solutions.",
+  },
+  {
+    icon: <FaPrint />,
+    title: "Flex Printing",
+    color: "text-green-600",
+    detail:
+      "High-quality flex printing for events, promotions, shops, exhibitions, religious programs, hoardings, backdrops and outdoor branding requirements.",
   },
 ]
 
@@ -235,7 +234,7 @@ export default function About() {
 
               </motion.div>
 
-              {/* RIGHT CARD */}
+              {/* RIGHT VIDEO */}
 
               <motion.div
                 initial={{
@@ -250,59 +249,57 @@ export default function About() {
                   delay: .3,
                   duration: 1,
                 }}
-                className="hidden lg:block"
+                className="hidden lg:flex justify-end"
               >
 
                 <div
                   className="
-                    rounded-[40px]
-
-                    bg-white/10
-
-                    backdrop-blur-2xl
-
-                    border
-                    border-white/20
-
-                    p-10
-
-                    shadow-[0_30px_100px_rgba(0,0,0,.25)]
+                    relative
                   "
                 >
 
-                  <div className="space-y-8">
+                  {/* VIDEO */}
 
-                    <div>
-                      <p className="text-white/60">
-                        Projects Completed
-                      </p>
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="
+                      relative
+                      w-full
+                      max-w-[380px]
+                      h-[350px]
 
-                      <h3 className="text-white text-5xl font-black">
-                        500+
-                      </h3>
-                    </div>
+                      overflow-hidden
 
-                    <div>
-                      <p className="text-white/60">
-                        Years Experience
-                      </p>
+                      rounded-[0px]
 
-                      <h3 className="text-white text-5xl font-black">
-                        20+
-                      </h3>
-                    </div>
+                      border
+                      border-white/20
 
-                    <div>
-                      <p className="text-white/60">
-                        Happy Clients
-                      </p>
+                      shadow-[0_30px_100px_rgba(0,0,0,.35)]
+                    "
+                  >
+                    <source
+                      src="/videos/about.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
 
-                      <h3 className="text-white text-5xl font-black">
-                        300+
-                      </h3>
-                    </div>
+                  {/* DARK OVERLAY */}
 
-                  </div>
+                  <div
+                    className="
+                      absolute
+                      inset-0
+
+                      bg-gradient-to-t
+                      from-black/60
+                      via-black/10
+                      to-transparent
+                    "
+                  />                  
 
                 </div>
 

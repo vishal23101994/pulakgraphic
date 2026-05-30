@@ -351,7 +351,7 @@ export default function Footer() {
 
                 <FaMapMarkerAlt
                   className="
-                    text-cyan-500
+                    text-blue-500
                     mt-2
                     shrink-0
                   "
@@ -439,60 +439,82 @@ export default function Footer() {
 
         </div>
         {/* GST & ACCOUNT DETAILS */}
-        <div
-          className="
-            mt-12
+        <div className="mt-12 grid lg:grid-cols-2 gap-8">
 
-            rounded-[24px]
+          {/* GST DETAILS */}
 
-            border
-            border-slate-800
-
-            bg-white/[0.03]
-
-            backdrop-blur-sm
-
-            p-8
-          "
-        >
-
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-
+          <div
+            className="
+              rounded-[24px]
+              border border-slate-800
+              bg-white/[0.03]
+              backdrop-blur-sm
+              p-8
+            "
+          >
             <h3
               className="
-                text-lg
+                text-xl
                 font-bold
                 text-white
-                shrink-0
+                mb-6
               "
             >
-              GST & Banking Details
+              GST Details
             </h3>
 
-            <div
-              className="
-                flex-1
-
-                grid
-                md:grid-cols-2
-                lg:grid-cols-5
-
-                gap-6
-              "
-            >
+            <div className="space-y-4">
 
               <div>
-                <p className="text-slate-500 text-xs uppercase">
+                <p className="text-slate-500 text-sm">
                   GSTIN
                 </p>
 
-                <p className="text-slate-300 font-medium">
+                <p className="text-slate-300 font-medium text-lg">
                   07ACKPJ2504N1ZI
                 </p>
               </div>
 
               <div>
-                <p className="text-slate-500 text-xs uppercase">
+                <p className="text-slate-500 text-sm">
+                  Business Name
+                </p>
+
+                <p className="text-slate-300 font-medium">
+                  M/S Pulak Graphics
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* BANK DETAILS */}
+
+          <div
+            className="
+              rounded-[24px]
+              border border-slate-800
+              bg-white/[0.03]
+              backdrop-blur-sm
+              p-8
+            "
+          >
+            <h3
+              className="
+                text-xl
+                font-bold
+                text-white
+                mb-6
+              "
+            >
+              Banking Details
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-5">
+
+              <div>
+                <p className="text-slate-500 text-sm">
                   Account Name
                 </p>
 
@@ -502,7 +524,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="text-slate-500 text-xs uppercase">
+                <p className="text-slate-500 text-sm">
                   Account Number
                 </p>
 
@@ -512,7 +534,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="text-slate-500 text-xs uppercase">
+                <p className="text-slate-500 text-sm">
                   IFSC Code
                 </p>
 
@@ -522,7 +544,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <p className="text-slate-500 text-xs uppercase">
+                <p className="text-slate-500 text-sm">
                   Bank Name
                 </p>
 
