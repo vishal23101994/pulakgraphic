@@ -2,11 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
   FaStar,
   FaPalette,
   FaTruck,
   FaHeadset,
+  FaTimes,
+  FaSearchPlus,
+  FaSearchMinus,
 } from "react-icons/fa";
 
 import { motion } from "framer-motion";
@@ -37,14 +41,24 @@ const features = [
     text: "Always available for assistance.",
   },
 ];
+const gurus = [
+  "/images/guru1.jpg",
+  "/images/guru2.jpg",
+  "/images/guru3.jpg",
+  "/images/guru4.jpg",
+  "/images/guru5.jpg",
+  "/images/guru6.jpg",
+];
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(1);
   return (
     <>
 
       {/* HERO */}
 
-      <section className="relative min-h-screen -mt-[5px] overflow-hidden">
+      <section className="relative min-h-[90vh] lg:min-h-screen overflow-hidden">
 
         {/* BG */}
 
@@ -95,21 +109,21 @@ export default function Home() {
 
                 <h1
                   className="
-                    text-6xl
-                    md:text-8xl
+                    text-4xl
+                    sm:text-5xl
+                    md:text-7xl
                     lg:text-[58px]
                     font-black
                     font-serif
                     text-white
-                    tracking-normal
-                    whitespace-nowrap
+                    leading-tight
                   "
                 >
                   <span>Pulak</span>
 
                   <span
                     className="
-                      ml-4
+                      block sm:inline sm:ml-4
                       bg-gradient-to-r
                       from-blue-400
                       to-cyan-300
@@ -144,27 +158,20 @@ export default function Home() {
 
                 {/* Buttons */}
 
-                <div className="mt-12 flex flex-wrap gap-5">
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                   <Link
                     href="/services"
                     className="
-                      px-10
-                      py-5
-
+                      px-6 sm:px-10 py-4 sm:py-5
                       rounded-full
-
                       bg-gradient-to-r
                       from-blue-600
                       to-cyan-500
-
                       text-white
                       font-semibold
-
                       shadow-[0_20px_60px_rgba(59,130,246,.45)]
-
                       hover:scale-105
-
                       transition
                     "
                   >
@@ -282,7 +289,7 @@ export default function Home() {
 
       {/* ABOUT */}
 
-      <section className="relative py-36 px-6 overflow-hidden font-serif ">
+      <section className="relative py-20 md:py-36 px-6 overflow-hidden font-serif ">
 
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-100 blur-[220px] rounded-full opacity-60" />
 
@@ -290,7 +297,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto">
 
-          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-24 items-center">
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-24 items-center">
 
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -304,6 +311,9 @@ export default function Home() {
                   width={500}
                   height={750}
                   className="
+                    w-full
+                    max-w-md
+                    mx-auto
                     rounded-[40px]
                     shadow-[0_50px_120px_rgba(0,0,0,.18)]
                   "
@@ -319,13 +329,13 @@ export default function Home() {
 
                     bg-white
 
-                    p-8
+                    p-4 md:p-8
 
                     shadow-2xl
                   "
                 >
 
-                  <h3 className="text-3xl font-black text-blue-600">
+                  <h3 className="text-xl md:text-3xl font-black text-blue-600">
                     20+
                   </h3>
 
@@ -457,15 +467,107 @@ export default function Home() {
 
       </section>
 
+      {/* GURU BLESSINGS */}
+
+      <section className="relative py-20 md:py-36 px-6 overflow-hidden font-serif ">
+
+        <div className="max-w-7xl mx-auto px-6 text-center">
+
+          <div
+            className="
+              inline-flex
+              px-5
+              py-2
+              rounded-full
+              bg-orange-100
+              text-orange-700
+              font-semibold
+              mb-6
+            "
+          >
+            Divine Blessings
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-black mb-6">
+            Blessed By Our Revered Gurus
+          </h2>
+
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-16 leading-8">
+            We are truly blessed to receive the guidance, wisdom,
+            and divine blessings of our respected Gurus.
+            Their teachings inspire our journey and strengthen
+            our commitment to serving society with dedication,
+            humility, and devotion.
+          </p>
+
+        </div>
+
+        {/* Marquee */}
+
+        <div className="relative flex overflow-hidden">
+
+          <motion.div
+            className="flex gap-8"
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 25,
+              ease: "linear",
+            }}
+          >
+            {[...gurus, ...gurus].map((img, i) => (
+              <div
+                key={i}
+                className="
+                  min-w-[220px] md:min-w-[280px]
+                  bg-white
+                  rounded-[30px]
+                  p-4
+                  shadow-xl
+                "
+              >
+                <div
+                  onClick={() => {
+                    setSelectedImage(img);
+                    setZoom(1);
+                  }}
+                  className="cursor-pointer overflow-hidden rounded-[24px]"
+                >
+                  <Image
+                    src={img}
+                    alt={`Guru ${i + 1}`}
+                    width={300}
+                    height={350}
+                    className="
+                      w-full
+                      h-[280px] md:h-[350px]
+                      object-cover
+                      rounded-[24px]
+                      hover:scale-105
+                      transition
+                      duration-300
+                    "
+                  />
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+        </div>
+
+      </section>
+
       {/* PROCESS */}
 
-      <section className="py-30 px-6 bg-[#f8fbff] font-serif">
+      <section className="py-20 md:py-30 px-6 bg-[#f8fbff] font-serif">
 
       <div className="max-w-7xl mx-auto">
 
       <div className="text-center mb-28">
 
-      <h2 className="text-5xl font-black mb-8">
+      <h2 className="text-3xl md:text-5xl font-black mb-8">
       Our Creative Workflow
       </h2>
 
@@ -496,7 +598,7 @@ export default function Home() {
 
       rounded-[36px]
 
-      p-10
+      p-6 md:p-10
 
       shadow-xl
 
@@ -508,7 +610,7 @@ export default function Home() {
 
       <div
       className="
-      text-[90px]
+      text-[60px] md:text-[90px]
 
       font-black
 
@@ -544,7 +646,7 @@ export default function Home() {
 
       {/* STATS */}
 
-      <section className="py-36 px-6 font-serif">
+      <section className="py-20 md:py-36 px-6 font-serif">
 
       <div className="max-w-7xl mx-auto">
 
@@ -558,7 +660,7 @@ export default function Home() {
       from-[#07111f]
       to-[#0f2744]
 
-      p-20
+      p-8 md:p-20
 
       text-white
       "
@@ -566,7 +668,7 @@ export default function Home() {
 
       <div className="text-center mb-20">
 
-      <h2 className="text-5xl font-black mb-8">
+      <h2 className="text-3xl md:text-5xl font-black mb-8">
       Our Achievements
       </h2>
 
@@ -576,7 +678,7 @@ export default function Home() {
 
       </div>
 
-      <div className="grid md:grid-cols-4 gap-10 text-lg">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-lg">
 
       {[
       ["500+","Projects Completed"],
@@ -625,7 +727,7 @@ export default function Home() {
       via-cyan-500
       to-blue-700
 
-      p-24
+      p-8 md:p-24
 
       text-center
 
@@ -635,7 +737,7 @@ export default function Home() {
 
       <h2
       className="
-      text-4xl
+      text-2xl md:text-4xl
 
       font-black
 
@@ -647,7 +749,7 @@ export default function Home() {
 
       <p
       className="
-      text-2xl
+      text-lg md:text-2xl
 
       max-w-3xl
 
@@ -664,7 +766,7 @@ export default function Home() {
 
       </p>
 
-      <div className="flex justify-center gap-5 flex-wrap">
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
 
       <Link
       href="/contact"
@@ -713,7 +815,7 @@ export default function Home() {
 
       <section className="pb-24 px-6 font-serif">
 
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 xl:grid-cols-4 gap-8">
 
           {features.map((f) => (
             <div
@@ -723,7 +825,7 @@ export default function Home() {
                 from-white
                 to-slate-50
                 rounded-[30px]
-                p-8
+                p-6 md:p-8
                 shadow-xl
               "
             >
@@ -745,6 +847,100 @@ export default function Home() {
         </div>
 
       </section>
+      {selectedImage && (
+        <div
+          className="
+            fixed
+            inset-0
+            z-[9999]
+            bg-black/90
+            flex
+            items-center
+            justify-center
+            p-6
+          "
+        >
+          {/* Close */}
+
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="
+              absolute
+              top-6
+              right-6
+              text-white
+              text-3xl
+              z-20
+            "
+          >
+            <FaTimes />
+          </button>
+
+          {/* Zoom Controls */}
+
+          <div
+            className="
+              absolute
+              bottom-6 left-1/2 -translate-x-1/2
+              flex
+              gap-3
+              z-20
+            "
+          >
+            <button
+              onClick={() =>
+                setZoom((prev) => Math.min(prev + 0.2, 3))
+              }
+              className="
+                bg-white
+                text-black
+                p-3
+                rounded-full
+              "
+            >
+              <FaSearchPlus />
+            </button>
+
+            <button
+              onClick={() =>
+                setZoom((prev) => Math.max(prev - 0.2, 1))
+              }
+              className="
+                bg-white
+                text-black
+                p-3
+                rounded-full
+              "
+            >
+              <FaSearchMinus />
+            </button>
+          </div>
+
+          {/* Image */}
+
+          <div className="overflow-auto w-full max-h-[85vh] max-w-[95vw]">
+
+            <Image
+              src={selectedImage}
+              alt="Guru"
+              width={1200}
+              height={1200}
+              className="
+                object-contain
+                transition
+                duration-300
+                max-h-[80vh]
+                w-auto
+              "
+              style={{
+                transform: `scale(${zoom})`,
+              }}
+            />
+
+          </div>
+
+        </div>
+      )}
 
     </>
   );

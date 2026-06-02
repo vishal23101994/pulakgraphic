@@ -85,20 +85,36 @@ export default function Footer() {
         "
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-20">
 
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.8fr] gap-16">
-
+        <div
+          className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-[1.2fr_0.8fr_0.8fr_1.8fr]
+            gap-10
+            lg:gap-16
+          "
+        >
           {/* BRAND */}
 
-          <div>
+          <div className="text-center lg:text-left">
 
             <Link
               href="/"
-              className="flex items-center gap-4 mb-8"
+              className="
+                flex
+                flex-col
+                sm:flex-row
+                items-center
+                gap-4
+                mb-5 md:mb-8
+                text-center
+                sm:text-left
+              "
             >
-
-              <div className="relative w-20 h-20">
+              <div className="relative w-16 h-16 md:w-20 md:h-20">
 
                 <Image
                   src="/logo1.png"
@@ -114,12 +130,7 @@ export default function Footer() {
 
               <div>
 
-                <h2
-                  className="
-                    text-3xl
-                    font-black
-                  "
-                >
+                <h2 className="text-2xl md:text-3xl font-black">
                   Pulak
 
                   <span className="text-blue-500 ml-2">
@@ -139,8 +150,10 @@ export default function Footer() {
             <p
               className="
                 text-slate-400
-                leading-8
+                leading-7
                 max-w-md
+                text-center
+                sm:text-left
               "
             >
               Print • Publication • Media •
@@ -156,7 +169,16 @@ export default function Footer() {
 
             {/* SOCIAL */}
 
-            <div className="flex items-center gap-5 mt-12 flex-wrap">
+            <div
+              className="
+                flex
+                justify-center
+                sm:justify-start
+                gap-4
+                mt-8
+                flex-wrap
+              "
+            >
 
               {socials.map((social, index) => (
 
@@ -166,7 +188,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    text-[22px]
+                    text-[20px] md:text-[22px]
 
                     transition-all
                     duration-300
@@ -188,13 +210,13 @@ export default function Footer() {
 
           {/* SERVICES */}
 
-          <div>
+          <div className="text-center sm:text-left">
 
             <h3
               className="
                 text-xl
                 font-bold
-                mb-8
+                mb-5 md:mb-8
               "
             >
               Services
@@ -213,13 +235,13 @@ export default function Footer() {
                   key={item}
                   className="
                     flex
+                    justify-center
+                    sm:justify-start
                     items-center
                     gap-3
 
                     text-slate-400
-
                     hover:text-white
-
                     transition
                   "
                 >
@@ -242,13 +264,13 @@ export default function Footer() {
 
           {/* LINKS */}
 
-          <div>
+          <div className="text-center sm:text-left">
 
             <h3
               className="
                 text-xl
                 font-bold
-                mb-8
+                mb-5 md:mb-8
               "
             >
               Quick Links
@@ -287,7 +309,7 @@ export default function Footer() {
 
           {/* CONTACT */}
 
-          <div>
+          <div className="text-center sm:text-left">
 
             <h3
               className="
@@ -304,8 +326,18 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-5">
-              <div className="flex items-center gap-4">
-
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  sm:items-start
+                  gap-4
+                  text-center
+                  sm:text-left
+                "
+              >
                 {/* LOGO */}
                 <div className="relative w-14 h-14 shrink-0">
 
@@ -347,7 +379,18 @@ export default function Footer() {
               </div>
               {/* REGISTERED OFFICE */}
 
-              <div className="flex items-start gap-5">
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  sm:items-start
+                  gap-3
+                  text-center
+                  sm:text-left
+                "
+              >
 
                 <FaMapMarkerAlt
                   className="
@@ -357,7 +400,7 @@ export default function Footer() {
                   "
                 />
 
-                <div className="text-slate-400 text-sm">
+                <div className="text-slate-400 text-sm break-words">
 
                   <div className="text-white font-semibold mb-1">
                     Registered Office
@@ -374,8 +417,18 @@ export default function Footer() {
                 </div>
 
               </div>
-              <div className="flex items-start gap-5">
-
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  sm:items-start
+                  gap-3
+                  text-center
+                  sm:text-left
+                "
+              >
                 <FaMapMarkerAlt
                   className="
                     text-blue-500
@@ -384,7 +437,7 @@ export default function Footer() {
                   "
                 />
 
-                <div className="text-slate-400 text-sm">
+                <div className="text-slate-400 text-sm break-words">
                   <div className="text-white font-semibold mb-1">
                     Working Office
                   </div>
@@ -405,11 +458,21 @@ export default function Footer() {
 
               </div>
 
-              <div className="flex items-center gap-5">
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  gap-3
+                  text-center
+                  sm:text-left
+                "
+              >
 
                 <FaPhoneAlt className="text-blue-500" />
 
-                <div className="text-slate-400 text-sm">
+                <div className="text-slate-400 text-sm break-words">
 
                   <div>
                     +91 9810900699
@@ -423,7 +486,17 @@ export default function Footer() {
 
               </div>
 
-              <div className="flex items-center gap-5">
+              <div
+                className="
+                  flex
+                  flex-col
+                  sm:flex-row
+                  items-center
+                  gap-3
+                  text-center
+                  sm:text-left
+                "
+              >
 
                 <FaEnvelope className="text-blue-500" />
 
@@ -439,8 +512,15 @@ export default function Footer() {
 
         </div>
         {/* GST & ACCOUNT DETAILS */}
-        <div className="mt-12 grid lg:grid-cols-2 gap-8">
-
+        <div
+          className="
+            mt-12
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            gap-6
+          "
+        >
           {/* GST DETAILS */}
 
           <div
@@ -449,7 +529,9 @@ export default function Footer() {
               border border-slate-800
               bg-white/[0.03]
               backdrop-blur-sm
-              p-8
+              p-5 md:p-8
+              text-center
+              lg:text-left
             "
           >
             <h3
@@ -497,7 +579,9 @@ export default function Footer() {
               border border-slate-800
               bg-white/[0.03]
               backdrop-blur-sm
-              p-8
+              p-5 md:p-8
+              text-center
+              lg:text-left
             "
           >
             <h3
@@ -511,7 +595,7 @@ export default function Footer() {
               Banking Details
             </h3>
 
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
 
               <div>
                 <p className="text-slate-500 text-sm">
@@ -582,18 +666,18 @@ export default function Footer() {
             flex-col
             md:flex-row
 
-            justify-between
+            justify-center lg:justify-between
             items-center
 
             gap-4
           "
         >
 
-          <p className="text-slate-500">
+          <p className="text-slate-500 text-center text-sm md:text-base">
             © 2026 Pulak Graphics. All Rights Reserved.
           </p>
 
-          <p className="text-slate-500">
+          <p className="text-slate-500 text-center text-sm md:text-base">
             Designed with ❤️ by Pulak Graphics
           </p>
 

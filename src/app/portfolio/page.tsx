@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import {
@@ -110,28 +110,28 @@ const achievements = [
     title: "Pulak Vani Magazine",
     desc:
       "Successfully edited and managed Pulak Vani monthly magazine from 1998 to 2021 while spreading social and spiritual awareness.",
-    icon: <FaBookOpen />,
+    image: "/images/achievement1.jpg",
   },
 
   {
     title: "Digital Media Expansion",
     desc:
       "Used YouTube, Facebook, Instagram and other platforms to spread Jain teachings and connect global audiences.",
-    icon: <FaBullhorn />,
+    image: "/images/achievement2.jpg",
   },
 
   {
     title: "Religious Promotion",
     desc:
       "Played a major role in spreading messages and teachings of revered Jain saints across India.",
-    icon: <FaPrayingHands />,
+    image: "/images/achievement3.jpg",
   },
 
   {
     title: "Social Recognition",
     desc:
-      "Received prestigious titles including युवा रत्न, पुलक रत्न and समाज रत्न for social contribution.",
-    icon: <FaMedal />,
+      "Received prestigious titles including 'Yuva Ratna', 'Pulak Ratna' and 'Samaaj Ratna' for social contribution.",
+    image: "/images/achievement4.jpg",
   },
 ];
 
@@ -1081,49 +1081,48 @@ export default function Portfolio() {
                 }}
                 className="
                   rounded-[32px]
-
-                  bg-slate-50
-
-                  p-10
-
+                  bg-white
+                  overflow-hidden
                   border
-                  border-slate-100
-
-                  shadow-lg
+                  border-slate-200
+                  shadow-xl
+                  hover:shadow-2xl
+                  transition-all
+                  duration-500
                 "
               >
 
-                <div
-                  className="
-                    w-14
-                    h-14
+                <div className="mb-6 overflow-hidden rounded-[24px]">
 
-                    rounded-2xl
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={600}
+                    height={400}
+                    className="
+                      w-full
+                      h-[220px]
+                      object-cover
+                      rounded-[24px]
+                      transition
+                      duration-500
+                      hover:scale-105
+                    "
+                  />
 
-                    bg-gradient-to-r
-                    from-blue-600
-                    to-cyan-500
-
-                    text-white
-                    text-2xl
-
-                    flex
-                    items-center
-                    justify-center
-
-                    mb-6
-                  "
-                >
-                  {item.icon}
                 </div>
 
-                <h3 className="text-2xl font-black mb-5">
-                  {item.title}
-                </h3>
+                <div className="p-8">
 
-                <p className="text-gray-600 leading-8 text-lg">
-                  {item.desc}
-                </p>
+                  <h3 className="text-2xl font-black mb-5">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-8 text-lg">
+                    {item.desc}
+                  </p>
+
+                </div>
 
               </motion.div>
 
@@ -1185,28 +1184,66 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
 
             {[
-              "Yuva Ratna",
-              "Pulak Ratna",
-              "Samaj Ratna",
-              "Other Honors",
+              {
+                title: "Yuva Ratna",
+                image: "/images/yuva-ratna.jpg",
+              },
+              {
+                title: "Pulak Ratna",
+                image: "/images/pulak-ratna.jpg",
+              },
+              {
+                title: "Samaj Ratna",
+                image: "/images/samaj-ratna.jpg",
+              },
+              {
+                title: "Other Honors",
+                image: "/images/other-honors.jpg",
+              },
             ].map((item) => (
 
               <div
-                key={item}
+                key={item.title}
                 className="
                   rounded-[32px]
-                  bg-slate-50
-                  p-10
+                  bg-white
+                  p-6
                   text-center
-                  shadow-lg
+                  shadow-xl
+                  border
+                  border-slate-200
+                  hover:-translate-y-2
+                  hover:shadow-2xl
+                  transition-all
+                  duration-500
                 "
               >
 
-                <FaMedal className="text-4xl text-blue-600 mx-auto mb-6" />
+                <>
+                  <FaMedal className="text-4xl text-blue-600 mx-auto mb-6" />
 
-                <h3 className="text-xl font-black">
-                  {item}
-                </h3>
+                  <div className="overflow-hidden rounded-[20px] mb-6">
+
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="
+                        w-full
+                        h-[220px]
+                        object-cover
+                        rounded-[20px]
+                        transition-all
+                        duration-500
+                        hover:scale-105
+                      "
+                    />
+
+                  </div>
+
+                  <h3 className="text-xl font-black">
+                    {item.title}
+                  </h3>
+                </>
 
               </div>
 
