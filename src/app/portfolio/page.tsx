@@ -21,6 +21,7 @@ import {
   FaYoutube,
   FaFacebook,
   FaInstagram,
+  FaPlaneDeparture,
 } from "react-icons/fa";
 
 const journey = [
@@ -102,6 +103,22 @@ const journey = [
     desc:
       "Founded Jinsharnam Media and expanded spiritual outreach digitally.",
     icon: <FaBullhorn />,
+  },
+
+  {
+    year: "2022",
+    title: "Dubai International Visit",
+    desc:
+      "Visited Dubai, expanding global exposure and gaining insights into international business, culture and digital innovation.",
+    icon: <FaPlaneDeparture />,
+  },
+
+  {
+    year: "2024",
+    title: "Thailand International Visit",
+    desc:
+      "Visited Thailand, strengthening cultural understanding and exploring modern tourism, media and global connectivity.",
+    icon: <FaPlaneDeparture />,
   },
 ];
 
