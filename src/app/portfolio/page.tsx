@@ -110,28 +110,28 @@ const achievements = [
     title: "Pulak Vani Magazine",
     desc:
       "Successfully edited and managed Pulak Vani monthly magazine from 1998 to 2021 while spreading social and spiritual awareness.",
-    image: "/images/achievement1.jpg",
+    icon: <FaBookOpen />,
   },
 
   {
     title: "Digital Media Expansion",
     desc:
       "Used YouTube, Facebook, Instagram and other platforms to spread Jain teachings and connect global audiences.",
-    image: "/images/achievement2.jpg",
+    icon: <FaBullhorn />,
   },
 
   {
     title: "Religious Promotion",
     desc:
       "Played a major role in spreading messages and teachings of revered Jain saints across India.",
-    image: "/images/achievement3.jpg",
+    icon: <FaPrayingHands />,
   },
 
   {
     title: "Social Recognition",
     desc:
       "Received prestigious titles including 'Yuva Ratna', 'Pulak Ratna' and 'Samaaj Ratna' for social contribution.",
-    image: "/images/achievement4.jpg",
+    icon: <FaAward />,
   },
 ];
 
@@ -1070,60 +1070,57 @@ export default function Portfolio() {
 
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
 
             {achievements.map((item, index) => (
 
               <motion.div
                 key={index}
-                whileHover={{
-                  y: -8,
-                }}
+                whileHover={{ y: -8 }}
                 className="
                   rounded-[32px]
                   bg-white
-                  overflow-hidden
+                  p-10
                   border
                   border-slate-200
                   shadow-xl
                   hover:shadow-2xl
                   transition-all
                   duration-500
+                  text-center
                 "
               >
+                <div
+                  className="
+                    w-24
+                    h-24
+                    mx-auto
+                    mb-8
 
-                <div className="mb-6 overflow-hidden rounded-[24px]">
+                    rounded-full
 
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={600}
-                    height={400}
-                    className="
-                      w-full
-                      h-[220px]
-                      object-cover
-                      rounded-[24px]
-                      transition
-                      duration-500
-                      hover:scale-105
-                    "
-                  />
+                    bg-gradient-to-r
+                    from-blue-600
+                    to-cyan-500
 
+                    flex
+                    items-center
+                    justify-center
+
+                    text-white
+                    text-4xl
+                  "
+                >
+                  {item.icon}
                 </div>
 
-                <div className="p-8">
+                <h3 className="text-2xl font-black mb-5">
+                  {item.title}
+                </h3>
 
-                  <h3 className="text-2xl font-black mb-5">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-gray-600 leading-8 text-lg">
-                    {item.desc}
-                  </p>
-
-                </div>
-
+                <p className="text-gray-600 leading-8 text-lg">
+                  {item.desc}
+                </p>
               </motion.div>
 
             ))}
