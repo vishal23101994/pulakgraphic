@@ -1186,19 +1186,19 @@ export default function Portfolio() {
             {[
               {
                 title: "Yuva Ratna",
-                image: "/images/yuva-ratna.jpg",
+                icon: <FaMedal />,
               },
               {
                 title: "Pulak Ratna",
-                image: "/images/pulak-ratna.jpg",
+                icon: <FaAward />,
               },
               {
                 title: "Samaj Ratna",
-                image: "/images/samaj-ratna.jpg",
+                icon: <FaStar />,
               },
               {
                 title: "Other Honors",
-                image: "/images/other-honors.jpg",
+                icon: <FaAward />,
               },
             ].map((item) => (
 
@@ -1207,44 +1207,50 @@ export default function Portfolio() {
                 className="
                   rounded-[32px]
                   bg-white
-                  p-6
+                  p-10
                   text-center
                   shadow-xl
                   border
                   border-slate-200
-                  hover:-translate-y-2
+                  hover:-translate-y-3
                   hover:shadow-2xl
                   transition-all
                   duration-500
                 "
               >
+                <div
+                  className="
+                    w-24
+                    h-24
+                    mx-auto
+                    mb-8
 
-                <>
-                  <FaMedal className="text-4xl text-blue-600 mx-auto mb-6" />
+                    rounded-full
 
-                  <div className="overflow-hidden rounded-[20px] mb-6">
+                    bg-gradient-to-r
+                    from-blue-600
+                    to-cyan-500
 
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="
-                        w-full
-                        h-[220px]
-                        object-cover
-                        rounded-[20px]
-                        transition-all
-                        duration-500
-                        hover:scale-105
-                      "
-                    />
+                    flex
+                    items-center
+                    justify-center
 
-                  </div>
+                    text-white
+                    text-4xl
+                  "
+                >
+                  {item.icon}
+                </div>
 
-                  <h3 className="text-xl font-black">
-                    {item.title}
-                  </h3>
-                </>
+                <h3 className="text-2xl font-black mb-4">
+                  {item.title}
+                </h3>
 
+                <p className="text-gray-600 leading-8">
+                  Honored for outstanding contribution towards
+                  religion, social service, youth empowerment
+                  and community development.
+                </p>
               </div>
 
             ))}
