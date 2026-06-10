@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FaStar,
   FaPalette,
@@ -11,6 +11,7 @@ import {
   FaTimes,
   FaSearchPlus,
   FaSearchMinus,
+  FaDownload,
 } from "react-icons/fa";
 
 import { motion } from "framer-motion";
@@ -41,18 +42,28 @@ const features = [
     text: "Always available for assistance.",
   },
 ];
-const gurus = [
-  "/images/guru1.jpg",
-  "/images/guru2.jpg",
-  "/images/guru3.jpg",
-  "/images/guru4.jpg",
-  "/images/guru5.jpg",
-  "/images/guru6.jpg",
-];
 
 export default function Home() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedGuru, setSelectedGuru] = useState<{
+    image: string;
+    name: string;
+  } | null>(null);
   const [zoom, setZoom] = useState(1);
+  type Guru = {
+    image: string;
+    name: string;
+  };
+  const [gurus, setGurus] = useState<Guru[]>([]);
+  const [isPaused, setIsPaused] = useState(false);
+  useEffect(() => {
+    fetch("/api/gurus")
+      .then((res) => res.json())
+      .then((data) => setGurus(data))
+      .catch((err) =>
+        console.error("Failed to load guru images", err)
+      );
+  }, []);
+  
   return (
     <>
 
@@ -504,20 +515,28 @@ export default function Home() {
 
         {/* Marquee */}
 
-        <div className="relative flex overflow-hidden">
+        <div
+          className="relative flex overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
 
           <motion.div
             className="flex gap-8"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
+            animate={
+              isPaused
+                ? undefined
+                : {
+                    x: ["0%", "-50%"],
+                  }
+            }
             transition={{
               repeat: Infinity,
-              duration: 25,
+              duration: 120,
               ease: "linear",
             }}
           >
-            {[...gurus, ...gurus].map((img, i) => (
+            {[...gurus, ...gurus].map((guru, i) => (
               <div
                 key={i}
                 className="
@@ -530,26 +549,49 @@ export default function Home() {
               >
                 <div
                   onClick={() => {
-                    setSelectedImage(img);
+                    setSelectedGuru(guru);
                     setZoom(1);
                   }}
-                  className="cursor-pointer overflow-hidden rounded-[24px]"
+                  className="cursor-pointer"
                 >
-                  <Image
-                    src={img}
-                    alt={`Guru ${i + 1}`}
-                    width={300}
-                    height={350}
+                  {/* Frame */}
+                  <div
                     className="
-                      w-full
-                      h-[280px] md:h-[350px]
-                      object-cover
+                      p-3
                       rounded-[24px]
-                      hover:scale-105
-                      transition
-                      duration-300
+                      bg-gradient-to-br
+                      from-yellow-300
+                      via-orange-200
+                      to-yellow-500
+                      shadow-lg
                     "
-                  />
+                  >
+                    <div className="relative w-full h-[280px] md:h-[350px]">
+                      <Image
+                        src={guru.image}
+                        alt={guru.name}
+                        fill
+                        className="
+                          object-cover
+                          rounded-[18px]
+                        "
+                      />
+                    </div>
+                  </div>
+
+                  <h3
+                    className="
+                      mt-4
+                      text-center
+                      text-sm
+                      md:text-base
+                      font-semibold
+                      text-gray-800
+                      line-clamp-3
+                    "
+                  >
+                    {guru.name}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -847,8 +889,9 @@ export default function Home() {
         </div>
 
       </section>
-      {selectedImage && (
+      {selectedGuru && (
         <div
+          onClick={() => setSelectedGuru(null)}
           className="
             fixed
             inset-0
@@ -863,7 +906,7 @@ export default function Home() {
           {/* Close */}
 
           <button
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedGuru(null)}
             className="
               absolute
               top-6
@@ -914,29 +957,77 @@ export default function Home() {
             >
               <FaSearchMinus />
             </button>
+            <a
+              href={selectedGuru.image}
+              download
+              className="
+                bg-white
+                text-black
+                p-3
+                rounded-full
+              "
+            >
+              <FaDownload />
+            </a>
           </div>
 
           {/* Image */}
 
-          <div className="overflow-auto w-full max-h-[85vh] max-w-[95vw]">
+          {/* Image */}
 
-            <Image
-              src={selectedImage}
-              alt="Guru"
-              width={1200}
-              height={1200}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="
+              flex
+              flex-col
+              items-center
+              justify-center
+            "
+          >
+
+            <h2
               className="
-                object-contain
-                transition
-                duration-300
-                max-h-[80vh]
-                w-auto
+                text-white
+                text-xl
+                md:text-3xl
+                font-bold
+                text-center
+                mb-6
+                max-w-4xl
               "
-              style={{
-                transform: `scale(${zoom})`,
-              }}
-            />
+            >
+              {selectedGuru.name}
+            </h2>
 
+            <div
+              className="
+                p-4
+                rounded-[30px]
+                bg-gradient-to-br
+                from-yellow-300
+                via-orange-200
+                to-yellow-500
+                shadow-[0_0_60px_rgba(255,215,0,.35)]
+              "
+            >
+              <Image
+                src={selectedGuru.image}
+                alt={selectedGuru.name}
+                width={500}
+                height={1400}
+                className="
+                  object-contain
+                  rounded-[20px]
+                  transition-all
+                  duration-300
+                  max-w-[80vw]
+                  max-h-[70vh]
+                "
+                style={{
+                  transform: `scale(${zoom})`,
+                }}
+              />
+            </div>
           </div>
 
         </div>
